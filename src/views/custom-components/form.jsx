@@ -1,9 +1,12 @@
 /*page for clients to enter */ 
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Row, Col, Container,Form, FormGroup, Input, Button, } from 'reactstrap';
 
 const form = () => {
+
+  const navigate = useNavigate();
     return (
       <div>
         <div className="spacer bg-light">
@@ -38,23 +41,76 @@ const form = () => {
                               <Input type="text" placeholder="email" />
                             </FormGroup>
                           </Col>
-                          <Col lg="12">
+
+                  
+
+                          <Col lg="6">
                             <FormGroup className="m-t-15">
-                              <Input
-                                type="textarea"
-                                name="text"
-                                placeholder="message"
-                              />
+                              <Input type="text" placeholder="height" />
                             </FormGroup>
                           </Col>
+                          <Col lg="6">
+                            <FormGroup className="m-t-15">
+                              <Input type="text" placeholder="weight" />
+                            </FormGroup>
+                          </Col>
+
+                          <Col lg="6">
+                            <FormGroup className="m-t-15">
+                              <Input type="select">
+                                <option value="">Sex</option>
+                                <option value="option1">Male</option>
+                                <option value="option2">Female</option>
+                              </Input>
+                            </FormGroup>
+                          </Col>
+
+                          <Col lg="6">
+                            <FormGroup className="m-t-15">
+                              <Input type="select">
+                                <option value="">Fitness Level</option>
+                                <option value="option1">Sedentary</option>
+                                <option value="option2">Lightly active</option>
+                                <option value="option3">Moderately active</option>
+                                <option value="option4">Very active</option>
+                                <option value="option5">Extra active</option>
+                              </Input>
+                            </FormGroup>
+                          </Col>
+
+                          <Col lg="6">
+                            <FormGroup className="m-t-15">
+                              <Input type="select">
+                                <option value="">Diabetes Type</option>
+                                <option value="option1">Type 1</option>
+                                <option value="option2">Type 2</option>
+                              </Input>
+                            </FormGroup>
+                          </Col>
+
+                          <Col lg="6">
+                            <FormGroup className="m-t-15">
+                              <Input type="select">
+                                <option value="">Dietary Restrictions</option>
+                                <option value="option1">Vegetarian</option>
+                                <option value="option2">Lactose Intolerant</option>
+                                <option value="option3">Gluten Intolerance</option>
+                                <option value="option4">Nut Allergy</option>
+                              </Input>
+                            </FormGroup>
+                          </Col>
+                       
+                          
+                         
                           <Col lg="12">
+
                             <Button
-                             className="btn btn-success-gradiant btn-md btn-arrow m-t-20" data-toggle="collapse" href="/result">
+                             className="btn btn-success-gradiant btn-md btn-arrow m-t-20" data-toggle="collapse" onClick={() => navigate("/result")}>
                               <span>
                                 {" "}
                                 SUBMIT <i className="ti-arrow-right"></i>
                               </span>
-                              <a/>
+                              
                             </Button>
                           </Col>
                         </Row>
