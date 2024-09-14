@@ -91,7 +91,7 @@ def home():
     weight = data['weight']  # kg
     height = data['height']  # cm
     age = data['age']  
-    gender = data['gender']  # 'male' or 'female'
+    sex = data['sex']  # 'male' or 'female'
     activity_level = data['activity_level']  
     diabeties_type = data['diabeties_type']  
     dietary_restrictions = data['dietary_restrictions']
