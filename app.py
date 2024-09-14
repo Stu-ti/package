@@ -27,10 +27,10 @@ def calculate_bmi(weight, height):
 #BMR calculations
 def calculate_bmr(weight,height,age,sex):
     #weight in kg, height in cm 
-    if sex == 'male':
+    if sex == 'm':
         bmr = 10 * weight + 6.25 * height - 5 * age + 5
         return bmr
-    elif sex == 'female':
+    elif sex == 'f':
         bmr = 10 * weight + 6.25 * height - 5 * age -161
         return bmr
     
