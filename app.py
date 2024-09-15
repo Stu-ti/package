@@ -33,7 +33,6 @@ def get_calculations():
 
 	#db.query(f"SELECT * FROM fwefjwie WHERE user == {user}")
 	return {"bmi": 30,
-		    "calories": 50}
 
 
 
