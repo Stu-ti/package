@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import mysql.connector
 import os
+import json
 
 
 #connecting front-end and back-end components (Cross Origin Resource Sharing )
@@ -8,7 +9,60 @@ import os
 #CORS(src)
 
 
+
+
 app = Flask(__name__)
+
+@app.route('/api/newuser', methods=['POST'])
+def upload_user_data():
+	user_data = json.loads(request.data)
+	'''
+
+	{
+	"name": "Adam",
+	...
+	}
+	'''
+
+
+	# upload to database
+
+@app.route('/api/calculations', methods=['GET'])
+def get_calculations():
+	user = request.args.get('user')
+
+	#db.query(f"SELECT * FROM fwefjwie WHERE user == {user}")
+	return {"bmi": 30,
+		    "calories": 50}
+
+
+
+@app.route('/api/recipes', methods=['GET'])
+def get_recipes():
+    user = request.args.get('user')
+    with mysql.connector.connect(
+        host="localhost",
+        user="StutiS",
+        password="MySQL@Stuti2005",
+        database="diabetesdata"
+    ) as db:
+        
+        with db.cursor(dictionary=True) as cursor:
+            id_query = f"SELECT recipe_id FROM user_to_recipe WHERE user_id = {user}"
+            cursor.execute(id_query)
+            
+            recipe_ids = tuple(val["recipe_id"] for val in cursor.fetchall())
+            recipe_query = f"SELECT * FROM recipes WHERE id IN {recipe_ids}"
+            print(recipe_query)
+            cursor.execute(recipe_query)
+            recipes = cursor.fetchall()
+
+            return jsonify(recipes)
+
+
+
+
+
 
 # Connect to MySQL database
 db = mysql.connector.connect(
