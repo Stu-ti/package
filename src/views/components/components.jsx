@@ -9,14 +9,7 @@ import Footer from "../../components/footer/footer.jsx";
 // sections for this page
 import AboutUs from "./sections/aboutus.jsx";
 import Diabetes from "./sections/diabetes.jsx";
-import PagePagination from "./sections/pagination.jsx";
-import Images from "./sections/images.jsx";
-import Cards from "./sections/cards.jsx";
-import PageForm from "./sections/form.jsx";
-import PageTable from "./sections/table.jsx";
-import TooltipPopover from "./sections/tooltip-popover.jsx";
-import JsComponents from "./sections/js-components.jsx";
-import CallToAction from "../../components/call-to-action/CallToAction"
+
 
 
 
@@ -28,15 +21,8 @@ const Components = () => {
                 <div className="container-fluid">
                     <HeaderBanner />
                     <AboutUs />
-                    <Diabetes />
-                    <PagePagination />
-                    <Images />                    
-                    <Cards />
-                    <PageForm />
-                    <PageTable />
-                    <TooltipPopover />
-                    <JsComponents />
-                    <CallToAction />
+                    <Diabetes />                 
+
                 </div>
             </div>
             <Footer />
